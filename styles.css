@@ -82,12 +82,14 @@ main {
   border-radius: 28px;
   overflow: hidden;
   margin: 0 1.5rem 2rem;
+  min-height: 360px;
+  height: min(55vh, 480px);
 }
 
 .hero img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -197,7 +199,8 @@ main {
 
   .hero {
     margin: 0 1rem 2rem;
-    min-height: 320px;
+    min-height: 380px;
+    height: 48vh;
   }
   .hero img {
     width: 100%;
