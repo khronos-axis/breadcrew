@@ -17,8 +17,8 @@
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: radial-gradient(circle at top, rgba(242, 167, 79, 0.12), transparent 30%),
-    linear-gradient(180deg, #121212 0%, #0c0c12 100%);
+  background: radial-gradient(circle at top, rgba(242, 167, 79, 0.10), transparent 25%),
+    linear-gradient(180deg, #000000 0%, #0b0b0d 40%, #2a1000 100%);
   color: var(--text);
   min-height: 100vh;
 }
@@ -26,15 +26,11 @@ body {
 .site-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 1rem;
-  padding: 1.25rem 1.5rem;
-  background: rgba(20, 21, 35, 0.88);
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  backdrop-filter: blur(12px);
+  padding: 1rem 1.5rem;
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .brand {
@@ -57,45 +53,56 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  justify-content: center;
+  margin: 0 auto 2rem;
+  padding: 0 1rem;
 }
 
 .nav-menu a {
   color: var(--muted);
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .nav-menu a:hover,
 .nav-menu a:focus-visible {
   color: var(--text);
+  transform: translateY(-1px);
 }
 
 main {
-  padding: 2rem 1.5rem 3rem;
+  padding: 1.5rem 0 3rem;
   max-width: 1080px;
   margin: 0 auto;
 }
 
 .hero {
-  background: linear-gradient(135deg, rgba(242, 167, 79, 0.16), rgba(255, 255, 255, 0.02));
   border: 1px solid var(--border);
   border-radius: 28px;
-  padding: 3rem 2rem;
-  margin-bottom: 2rem;
-  display: grid;
-  gap: 1rem;
+  overflow: hidden;
+  margin: 0 1.5rem 2rem;
 }
 
-.hero-content h2 {
-  margin: 0 0 1rem;
-  font-size: clamp(2rem, 4vw, 3.25rem);
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
-.hero-content p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.75;
+.map-section {
+  margin: 0 1.5rem 2rem;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.map-section img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .content-block {
@@ -104,6 +111,38 @@ main {
   border-radius: 28px;
   padding: 2rem;
   margin-bottom: 1.75rem;
+}
+
+.cta-block {
+  text-align: center;
+}
+
+.cta-block p {
+  max-width: 720px;
+  margin: 0 auto 1.5rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.button-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #0b0b0d;
+  box-shadow: 0 18px 40px rgba(242, 167, 79, 0.18);
+}
+
+.button-primary:hover,
+.button-primary:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 45px rgba(242, 167, 79, 0.24);
 }
 
 .content-block h2 {
@@ -149,15 +188,19 @@ main {
 @media (max-width: 720px) {
   .site-header {
     flex-direction: column;
-    align-items: stretch;
+    align-items: flex-start;
   }
 
   .nav-menu {
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .hero {
-    padding: 2rem 1.25rem;
+    margin: 0 1rem 2rem;
+  }
+  .hero img,
+  .map-section img {
+    max-width: 100%;
   }
 
   main {
