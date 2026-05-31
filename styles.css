@@ -99,9 +99,11 @@ main {
 }
 
 .hero {
+  position: relative;
   height: 100vh;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.15)),
     url('header.jpg') center/cover no-repeat;
+  background-attachment: fixed;
 }
 
 .hero::before {
@@ -110,10 +112,6 @@ main {
   inset: 0;
   background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.1));
   pointer-events: none;
-}
-
-.hero {
-  position: relative;
 }
 
 .map-section {
