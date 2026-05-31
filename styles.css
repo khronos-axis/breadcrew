@@ -198,16 +198,18 @@ main {
   }
 
   .hero {
-    margin: 0 -1rem 0;
-    width: calc(100% + 2rem);
+    margin: 0;
     border: none;
     border-radius: 0;
+    overflow: hidden;
   }
   .hero img {
-    width: 100%;
+    width: 120%;
+    max-width: none;
     height: auto;
     object-fit: cover;
-    transform: none;
+    display: block;
+    margin: 0 auto;
   }
 
   .map-section img {
@@ -215,6 +217,6 @@ main {
   }
 
   main {
-    padding: 1.5rem 1rem 2.5rem;
+    padding: 1.5rem 0 2.5rem;
   }
 }
