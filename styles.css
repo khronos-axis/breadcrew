@@ -224,18 +224,9 @@ main {
   }
 
   .hero {
-    margin: 0;
-    border: none;
-    border-radius: 0;
-    overflow: hidden;
-  }
-  .hero img {
-    width: 120%;
-    max-width: none;
-    height: auto;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;
+    height: 65vh;
+    background-attachment: scroll;
+    background-size: cover;
   }
 
   .map-section img {
