@@ -224,9 +224,12 @@ main {
   }
 
   .hero {
-    height: 65vh;
+    height: auto;
+    min-height: 60vh;
     background-attachment: scroll;
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   .map-section img {
